@@ -12,7 +12,7 @@ def text_count():
     text = get_book_text("books/frankenstein.txt")
     lower_text = text.lower()
     low_letters = list(lower_text)
-    letters = " ".join(low_letters)
+    letters = "".join(low_letters)
     characters = {}
     for i in letters:
         if i not in characters:
@@ -21,8 +21,15 @@ def text_count():
             characters[i] += 1
     return characters
 
-#def characters_in_order:
-#    return None
+def mysort(d):
+    return d["num"]
 
-
-
+def characters_in_order():
+    run_text = text_count()
+    char_sort = []
+    for text in run_text:
+        if text.isalpha():
+            count = run_text[text]
+            char_sort.append({"char": text, "num": count})
+    char_sort.sort(reverse=True, key=mysort)
+    return char_sort
