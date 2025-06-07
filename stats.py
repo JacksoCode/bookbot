@@ -1,15 +1,17 @@
-def get_book_text(path_to_file):
-    with open(path_to_file) as f:
+import sys
+userpath = sys.argv[1]
+def get_book_text():
+    with open(userpath) as f:
         contents = f.read()
         return contents
 
 def word_count():
-    words = get_book_text("books/frankenstein.txt")
+    words = get_book_text()
     word_count = len(words.split())
     return word_count
 
 def text_count():
-    text = get_book_text("books/frankenstein.txt")
+    text = get_book_text()
     lower_text = text.lower()
     low_letters = list(lower_text)
     letters = "".join(low_letters)
