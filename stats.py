@@ -1,5 +1,11 @@
 import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
 userpath = sys.argv[1]
+
 def get_book_text():
     with open(userpath) as f:
         contents = f.read()
